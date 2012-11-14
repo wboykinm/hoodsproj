@@ -11,4 +11,6 @@ Is a project for using crowdsourcing to define the boundaries of a city's neighb
 3. Configure [hoods.js]() with your list of neighborhood names, city centerpoint and splash screen intro text
 4. Visit the site, draw a few test polygons and watch them pile up in [results.html]()
 
-##Authorthe site, draw a few test polygons and watch them pile up in [results.html]()##Author td the site, draw a few test polygons and watch them pile up in [results.html]()##Authorn the site, draw a few test polygons and watch them pile up in [results.html]()##Author thy the site, draw a few test polygons and watch them pile up in [results.html]()##Author the site, draw a few test polygons and watch them pile up in [results.html]()##Author td the site, draw a few test polygons and watch them pile up in [results.html]()##Authorn the site, draw a few test polygons and watch them pile up in [results.html]()##Author the site, draw a few test polygons and watch them pile up in [results.html]()##Author
+##Authors
+* Andy Woodruff (Author)
+* Bill Morris (Repo monkey)
