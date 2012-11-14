@@ -1,6 +1,6 @@
 # hoods
 
-Is a project for crowdsourcing the boundaries of a city's neighborhoods, as seen by the people who live there (ideally). Developed by [Bostonography](http://www.bostonography.com) for that city's poorly-defined neighborhoods, it has since been applied to [Burlington, VT](http://btvhoods.geosprocket.org) and Denver, CO](http://milehigh.geosprocket.org), with some [interesting results](http://btvhoods.geosprocket.org/results2).
+Is a project for crowdsourcing the boundaries of a city's neighborhoods, as seen by the people who live there (ideally). Developed by [Bostonography](http://www.bostonography.com) for that city's poorly-defined neighborhoods, it has since been applied to [Burlington, VT](http://btvhoods.geosprocket.org) and [Denver, CO](http://milehigh.geosprocket.org), with some [interesting results](http://btvhoods.geosprocket.org/results2).
 
 ### Configuration
 
