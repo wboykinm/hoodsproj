@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Submitted BTV Neighborhood Boundaries</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<link rel="stylesheet" href="dist/leaflet.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="dist/leaflet.ie.css" /><![endif]-->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="dist/leaflet.js"></script>
+	<script type="text/javascript" src="dist/wax.leaf.min.js"></script>
+	<style>
+		.legend {
+			text-align: left;
+			line-height: 18px;
+			color: #555;
+		}
+		.legend i {
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin-right: 8px;
+			opacity: 0.7;
+		}
+	</style>
+</head>
+<body>
+	<div id="mapbox"></div>
+    <script type="text/javascript">
+
+    var url = 'http://a.tiles.mapbox.com/v3/landplanner.map-cjrkhk7k.jsonp'; //landplanner.map-1kviqbn1
+
+    var map = new L.Map('mapbox')  
+
+    .setView(new L.LatLng(44.48670891691767, -73.22181701660156), 13);
+
+    wax.tilejson(url, function(tilejson) {
+        map.addLayer(new wax.leaf.connector(tilejson));
+    });
+    </script>
+    
+    <script type="text/javascript">
+	// Define a GeoJSON data layer with data
+	var geojsonLayer = new L.GeoJSON();
+
+	// Display the name property on click
+	geojsonLayer.on('featureparse', function (e) {
+   		if (e.properties && e.properties.name){
+      	 	e.layer.bindPopup(e.properties.name);
+    		}
+	});
+	
+	$.getJSON(
+           "http://dev.geosprocket.com/btvwards/gethoods.php",
+           function(geojson) {
+        	$.each(geojson.features, function(i, feature) {
+        	geojsonLayer.addGeoJSON(feature);
+           	})
+       	   });
+
+	// Add the GeoJSON layer
+	map.addLayer(geojsonLayer);
+	
+	function getColor(n) {
+    	  return n = "The Old North End" ? '#A6CEE3' :
+            n = "The New North End"  ? '#1F78B4' :
+            n = "The Hill Section"  ? '#B2DF8A' :
+            n = "Downtown"  ? '#33A02C' :
+            n = "The Waterfront"   ? '#FB9A99' :
+            n = "The Five Sisters"   ? '#E31A1C' :
+            n = "The South End"   ? '#FDBF6F' :
+            n = "Riverside"   ? '#FF7F00' :
+            n = "The UVM/FAHC Campus"   ? '#CAB2D6' :
+            n = "The Intervale"   ? '#6A3D9A' :
+                     '#FFEDA0';
+	}
+	function style(feature) {
+			return {
+				weight: 2,
+				opacity: 0.8,
+				color: 'white',
+				dashArray: '3',
+				fillOpacity: 0.5,
+				fillColor: getColor(feature.properties.name)
+			};
+		}
+	
+	
+    </script>
+    
+</body>
+</html>

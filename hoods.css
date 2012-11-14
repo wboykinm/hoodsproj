@@ -1,0 +1,109 @@
+html { 
+	height: 100%;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #444;
+	padding: 0;
+	margin: 0;
+}
+body { height: 100%; margin: 0; padding: 0; }
+#map_canvas {
+	margin: 0;
+	border-right: 1px solid #666;
+}
+#hoodlist { 
+	float: right;
+	width: 205px;
+}
+
+
+#instructions {
+	height: 44px;
+	padding-left: 10px;
+	padding-top: 3px;
+	margin: 0;
+	background: #666;
+	color: #fff;
+}
+#instructions p {
+	margin-top: 0;
+	padding-top: 3px;
+	margin-bottom: 0;
+}
+#instructions p#instruction-details
+{
+	font-style: italic;
+	font-size: 10pt;
+	margin-bottom: 0;
+}
+
+.colorchip{
+	float:left;
+	margin:3px 3px;
+	width:15px;
+	height:15px;
+}
+
+
+.hood{
+	cursor: pointer;
+	font-size: 13pt;
+	margin: 7px 5px;
+	padding: 2px 5px;
+	color: #000;
+	vertical-align: middle;
+}
+
+.hood:hover {
+	text-decoration: underline;
+}
+
+.active {
+	border: 2px solid #666;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #eee;
+}
+
+#next {
+	cursor: pointer;
+	text-decoration: underline;
+	font-size: 9pt;
+	color: #ccc;
+	margin-left: 20px;
+}
+
+#finished {
+	margin: 2px 5px;
+	font-size: 10pt;
+}
+
+#submit {
+	margin: 2px 5px;
+	cursor: pointer;
+	font-weight: bold;
+	color: #06c;
+	font-size: 14pt;
+	background: #eef;
+	text-align: center;
+	border: 1px solid #06c;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 4px #999;
+	-webkit-box-shadow: 1px 1px 4px #999;
+	box-shadow: 1px 1px 4px #999;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#999999')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#999999');
+}
+
+#submit:hover {
+	text-decoration: underline;
+}
+
+.edit {
+	font-size: 8pt;
+	color: #666;
+	float: right;
+	margin-top: 5px;
+}
