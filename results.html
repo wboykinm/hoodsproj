@@ -29,7 +29,7 @@
 	<div id="mapbox"></div>
     <script type="text/javascript">
 
-    var url = 'http://a.tiles.mapbox.com/v3/landplanner.map-cjrkhk7k.jsonp'; //landplanner.map-1kviqbn1
+    var url = 'http://a.tiles.mapbox.com/v3/landplanner.map-cjrkhk7k.jsonp';
 
     var map = new L.Map('mapbox')  
 //CONFIGURE YOUR CITY LOCATION HERE
@@ -41,10 +41,8 @@
     </script>
     
     <script type="text/javascript">
-	// Define a GeoJSON data layer with data
 	var geojsonLayer = new L.GeoJSON();
 
-	// Display the name property on click
 	geojsonLayer.on('featureparse', function (e) {
    		if (e.properties && e.properties.name){
       	 	e.layer.bindPopup(e.properties.name);
