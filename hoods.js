@@ -14,6 +14,7 @@ var hoods = [
 	{name:"Mar Lee",color:"#604860"},
         {name:"Hale",color:"#00688B"},
         {name:"Congress Park",color:"#236B8E"},
+        {name:"custom",color:"cornflowerblue"},
 	];
 
 var currentHood = Math.round( Math.random()*(hoods.length-1) );
@@ -114,9 +115,16 @@ function initialize() {
 		$("#instruction-details").html( editText );
 	});
 	
-	for ( var i in hoods ){
-		$("#hoodlist").append( "<div class='hood'><div class='colorchip' style='background:"+hoods[i].color+";'></div><p style='display:inline;'>"+hoods[i].name+"</p></div>" );
-	}
+        for ( var i in hoods ){
+		  if (hoods[i].name == 'custom') {
+		 $("#hoodlist").append( "<div class='hood'><div class='colorchip' style='background:"+hoods[i].color+";'></div><p style='display:inline;'><input id='customhood' type='text' value='Submit your own' size='14'/></p></div>");
+		} else {
+		  $("#hoodlist").append( "<div class='hood'><div class='colorchip' style='background:"+hoods[i].color+";'></div><p style='display:inline;'>"+hoods[i].name+"</p></div>" );
+		}
+        }
+
+        //$(".hood").change(function() { alert( hoods[hoods.length - 1].name );      });
+        $(".hood").change(function() { hoods[hoods.length - 1].name = $("#customhood").val() });
 	
 	//$("#hoodlist").append( "<p id='finished'>Done drawing neighborhoods?</p><p id='submit'>SUBMIT YOUR MAP</p>");
 	
